@@ -50,3 +50,8 @@ Saved
 Content/StarterContent/
 *.sdf
 YerOutBaseball.sln
+*.dll
+Binaries/Win64/UE4Editor-YerOutBaseball-5386.pdb
+*.pdb
+YerOutBaseball.v12.suo
+*.suo
