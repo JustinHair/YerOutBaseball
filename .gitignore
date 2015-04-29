@@ -57,3 +57,7 @@ YerOutBaseball.v12.suo
 *.suo
 *.pdb
 Binaries/Win64/UE4Editor-YerOutBaseball.dll
+*.dll
+Binaries/Win64/UE4Editor-YerOutBaseball.pdb
+*.opensdf
+YerOutBaseball.v12.suo
