@@ -19,23 +19,23 @@ AYOStadium::AYOStadium()
 	// The name of the stadium
 	StadiumName = TEXT("YO Stadium");
 	// The maximum attendance of fans at a single game for this stadium.
-	StadiumMaxAttendance = MAX_ATTENDANCE;
+	StadiumMaxAttendance =		MAX_ATTENDANCE;
 	// Fence Distances.
-	LeftFieldWallDistance = CORNER_OUTFIELD_DISTANCE;
-	LeftCenterWallDistance = ALLEYS_OUTFIELD_DISTANCE;
-	CenterWallDistance = CENTER_OUTFIELD_DISTANCE;
-	RightCenterWallDistance = ALLEYS_OUTFIELD_DISTANCE;
-	RightFieldWallDistance = CORNER_OUTFIELD_DISTANCE;
+	LeftFieldWallDistance =		CORNER_OUTFIELD_DISTANCE;
+	LeftCenterWallDistance =	ALLEYS_OUTFIELD_DISTANCE;
+	CenterWallDistance =		CENTER_OUTFIELD_DISTANCE;
+	RightCenterWallDistance =	ALLEYS_OUTFIELD_DISTANCE;
+	RightFieldWallDistance =	CORNER_OUTFIELD_DISTANCE;
 	// Wall heights
-	LeftFieldWallHeight = WALL_HEIGHT;
-	LeftCenterWallHeight = WALL_HEIGHT;
-	CenterWallHeight = WALL_HEIGHT;
-	RightCenterWallHeight = WALL_HEIGHT;
-	RightFieldWallHeight = WALL_HEIGHT;
+	LeftFieldWallHeight =		WALL_HEIGHT;
+	LeftCenterWallHeight =		WALL_HEIGHT;
+	CenterWallHeight =			WALL_HEIGHT;
+	RightCenterWallHeight =		WALL_HEIGHT;
+	RightFieldWallHeight =		WALL_HEIGHT;
 	// Turf
-	OFTurf = EYOStadiumOFTurf::Grass;
-	IFTurf = EYOStadiumIFTurf::Grass;
-	FoulSize = EYOStadiumFoulTerritory::Medium;
+	OFTurf =					EYOStadiumOFTurf::Grass;
+	IFTurf =					EYOStadiumIFTurf::Grass;
+	FoulSize =					EYOStadiumFoulTerritory::Medium;
 }
 
 // Called when the game starts or when spawned
