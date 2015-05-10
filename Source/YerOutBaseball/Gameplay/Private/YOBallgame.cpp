@@ -3,40 +3,54 @@
 #include "YerOutBaseball.h"
 #include "Gameplay/Public/YOBallgame.h"
 
-YOBallgame::YOBallgame()
+DEFINE_LOG_CATEGORY(YOLOG);
+
+bool AYOBallGame::IsBatterBeingIntentionallyWalked()
 {
+	//Fielding Teams coach will make this decision based on several different factors.
+
+	return false;
 }
 
-YOBallgame::~YOBallgame()
+EYOGameStatex::Type AYOBallGame::GetCurrentGameState() const
 {
+	return CurrentGameState;
 }
 
-
-void YOBallgame::SetGameState(EYOGameState::Type NewState)
+void AYOBallGame::SetGameState(EYOGameStatex::Type NewState)
 {
 	CurrentGameState = NewState;
 	HandleNewStates(CurrentGameState);
 }
 
-void YOBallgame::HandleNewStates(EYOGameState::Type NewState)
+void AYOBallGame::HandleNewStates(EYOGameStatex::Type NewState)
 {
 	switch (NewState)
 	{
-	case EYOGameState::InTheMenus:
+	case EYOGameStatex::InTheMenus:
 		break;
-	case EYOGameState::PreGame:
+	case EYOGameStatex::PreGame:
 		break;
-	case EYOGameState::BeforeThePlay:
+	case EYOGameStatex::BeforeThePlay:
 		break;
-	case EYOGameState::AtBatInProgress:
+	case EYOGameStatex::AtBatInProgress:
+		IsBatterBeingIntentionallyWalked();
 		break;
-	case EYOGameState::BallInPlay:
+	case EYOGameStatex::BallInPlay:
 		break;
-	case EYOGameState::PlayResolution:
+	case EYOGameStatex::PlayResolution:
 		break;
-	case EYOGameState::Unknown:
+	case EYOGameStatex::Unknown:
 	default:
 		//Nothing happens.
 		break;
+	}
+}
+
+void AYOBallGame::PrintBaseballSimLog()
+{
+	for (int32 i = 0; i < BaseballSimLog.Num(); i++)
+	{
+		UE_LOG(YOLOG, Log, TEXT("%s"), *BaseballSimLog[i]);
 	}
 }

@@ -5,7 +5,7 @@
 #include "YOGameState.h"
 
 
-DEFINE_LOG_CATEGORY(YOLOG);
+//DEFINE_LOG_CATEGORY(YOLOG);
 
 
 AYOGameMode::AYOGameMode(const class FObjectInitializer& ObjectInitializer)

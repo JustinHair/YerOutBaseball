@@ -14,6 +14,8 @@
 //Take Pitches
 //Agressive
 
+
+
 /**
  * 
  */
@@ -22,6 +24,10 @@ class YEROUTBASEBALL_API YOCoach
 public:
 	YOCoach();
 	~YOCoach();
+
+	//***** PITCHING STRATEGY *****/
+	// Intentionally walking the batter
+	//bool bIsWalkingTheBatter();
 
 
 
@@ -35,7 +41,7 @@ private:
 
 	//***** PITCHING STRATEGY *****/
 	// Intentionally walking the batter
-	bool bIsIBBOpposingBatter;
+	
 
 	//***** BATTING STRATEGY ******/
 	

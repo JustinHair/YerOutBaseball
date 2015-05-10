@@ -1,10 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "YOBallGame.generated.h"
 #pragma once
 
 //enum to store the current state of the game.
 UENUM(BlueprintType)
-namespace EYOGameState
+namespace EYOGameStatex
 {
 	enum Type
 	{
@@ -14,23 +15,21 @@ namespace EYOGameState
 		AtBatInProgress,	// Deciding who wins in the battle between pitcher and batter.
 		BallInPlay,			// Ball is now in play.
 		PlayResolution,		// Move runners, set new outs, capture current game stats
-		Unknown,			// Who knows what happened...
+		Unknown,			// ...
 	};
 }
 
 /**
  * Class used for simulating a baseball game.
  */
-class YEROUTBASEBALL_API YOBallgame
+UCLASS(BlueprintType, Blueprintable)
+class YEROUTBASEBALL_API AYOBallGame : public AInfo
 {
+	GENERATED_BODY()
 public:
-	YOBallgame();
-	~YOBallgame();
-
-
-
 	//***** STRATEGY *****/
 	//Determine if the fielding team is going to intentionally walk the batter.
+	bool IsBatterBeingIntentionallyWalked();
 	//Determine if the batter is going to attempt to bunt
 
 	//***** AT BAT IN PROGRESS *****/
@@ -48,19 +47,28 @@ public:
 	//Determine if hit is a homerun.
 
 	//***** GAME STATE *****/
-	/*
-	**Set the game state to the desired state.
-	**@NewGameState - Enum which will be used by the game state.
-	*/
-	void SetGameState(EYOGameState::Type NewGameState);
+	// Returns the current game state enum.
+	UFUNCTION(BlueprintCallable, Category = "Baseball|Simulation|Game State")
+	EYOGameStatex::Type GetCurrentGameState() const;
 
-	//returns the current game state as an enum.
-	EYOGameState::Type GetCurrentGameState() const;
+	// Set the game state to the desired state.
+	// @NewGameState - Enum which will be used by the game state.
+	UFUNCTION(BlueprintCallable, Category = "Baseball|Simulation|Game State")
+	void SetGameState(EYOGameStatex::Type NewGameState);
+
+	//***** LOGGING *****/
+	// Array used to hold the in game logging for the simulation
+	TArray<FString> BaseballSimLog;
+	// Logs the BaseballSimLog.
+	UFUNCTION(BlueprintCallable, Category = "Baseball|Simulation|Logging")
+	void PrintBaseballSimLog();
 
 private:
-	//Switches the game state when it is changed.
-	void HandleNewStates(EYOGameState::Type NewState);
+	// Switches the game state when it is changed.
+	// @NewState - The state that the game will switch to.
+	void HandleNewStates(EYOGameStatex::Type NewState);
 	
-	EYOGameState::Type CurrentGameState;
+	// Holds the current game state value.
+	EYOGameStatex::Type CurrentGameState;
 
 };

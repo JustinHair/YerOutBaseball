@@ -6,7 +6,6 @@
 YOCoach::YOCoach()
 {
 	Name = TEXT("YO Coach");
-	bIsIBBOpposingBatter = false;
 	bIsStealing = false;
 }
 
